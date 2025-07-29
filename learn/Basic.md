@@ -1,0 +1,23 @@
+### Real DOM vs Virtual DOM
+#### 예시
+1. 만약 10개의 리스트가 있다.
+2. 그 중에 한가지의 리스트만 Update 됨
+    - Real DOM
+        - 전체 리스트를 다시 Reload !
+        - 매우 비싼 작업!
+    - Virtual DOM
+        - 그바뀐 한가지만 DOM 에서 바꾼다
+
+#### HOW?
+1. JSX(우선 HTML로 간단히 알아두기)를 렌더링한다.
+    - 그러면 Virtual DOM 이 Update 됨
+2. Virtual DOM이 이전 Virtual DOM에서 찍어둔 Snapshot과 비교해서 바뀐 부분을 찾음.
+    - 이 과정을 diffing 이라 부름
+3. 그 바뀐 부분만 Real DOM에서 바꿔준다.
+
+### Create React App
+#### Babel
+- 구형 브라우저에서 최신 JS문법을 ES5로 돌 수 있게 변환 시켜주는 도구(트랜스파일러)
+#### Webpack
+- 여러 개의 js 파일을 하나 또는 소수의 파일로 묶는 도구
+- 여러 html/js/css/이미지 파일들 한 번에 브라우저에 로딩하면 너무 느림 -> 웹팩으로 번들링.
