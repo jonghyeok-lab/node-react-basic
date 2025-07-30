@@ -1,0 +1,43 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>웹게임</title>
+</head>
+<body>
+<div id="root"></div>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<!--<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>-->
+<!--<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>-->
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script type="text/babel">
+    // import React from "react";
+    import ReactDOM from "react-dom/client";
+
+    class LikeButton extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {liked: false};
+        }
+
+        render() {
+            if (this.state.liked) {
+                return 'You Liked this';
+            }
+
+            // pop, push, shift, unshift, splice -> 배열 직접 수정
+            // concat, slice -> 새로운 배열 만듬. -> 리액트에서 불변성을 위해 사용.,
+            return (
+                <button onClick={() => this.state({liked: true})}> // 객체를 함부로 바꾸지 마라
+                    LIKE
+                </button>
+            )
+        }
+    }
+</script>
+<script type="text/babel">
+    // ReactDOM.render(<LinkButton />, document.querySelector('#root')) // React 17버전
+    ReactDOM.createRoot(document.getElementById('root')).render(<LikeButton/>) // React 18버전
+</script>
+</body>
+</html>
