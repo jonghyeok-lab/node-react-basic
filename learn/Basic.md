@@ -10,32 +10,7 @@
 - ref = {(c) => { this.input = c}}
 - setState
   - setState() 마다 render() 함수가 다시 실행된다.
-  - 비동기함수이다. 
-```angular2html
-const GuGuDan = () => {
-        const [first, setFirst] = React.useState(Math.ceil(Math.random() * 9));
-        const [second, setSecond] = React.useState(Math.ceil(Math.random() * 9));
-        const [value, setValue] = React.useState(Math.ceil(Math.random() * 9));
-        const [result, setResult] = React.useState(Math.ceil(Math.random() * 9));
-
-        const onChangeInput = (e) => {
-            setValue(e.target.value);
-        }
-
-        return (
-            <React.Fragment>
-                <div>{first} {second}는?</div>
-                <form onSubmit="">
-                    <input ref={} onChange={onChangeInput} value={value}/>
-                    <button>입력!</button>
-                </form>
-                <div id="result">{result}</div>
-            </React.Fragment>
-        );
-
-    }
-}
-```
+  - 비동기함수이다.
 
 ### Real DOM vs Virtual DOM
 #### 예시
@@ -61,3 +36,4 @@ const GuGuDan = () => {
 - 여러 개의 js 파일을 하나 또는 소수의 파일로 묶는 도구
 - 여러 html/js/css/이미지 파일들 한 번에 브라우저에 로딩하면 너무 느림 -> 웹팩으로 번들링.
 - 웹팩은 src/** 만 처리하기 때문에 이미지는 public/** 이 아닌 src 에 위치시킨다. 
+- 웹팩 안에 바벨 있음
