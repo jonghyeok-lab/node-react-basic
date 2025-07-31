@@ -4,6 +4,38 @@
 
 ### 
 - Component: 데이터와 화면을 하나로 묶은 재사용성 있는 코드조각
+- Hook: ref 랑 setState 를 함수 컴포넌트에서도 사용가능하게
+- 객체를 함부로 바꾸지 말아라
+  - `<button onClick={() => this.state({liked: true})}> LIKE </button>`
+- ref = {(c) => { this.input = c}}
+- setState
+  - setState() 마다 render() 함수가 다시 실행된다.
+  - 비동기함수이다. 
+```angular2html
+const GuGuDan = () => {
+        const [first, setFirst] = React.useState(Math.ceil(Math.random() * 9));
+        const [second, setSecond] = React.useState(Math.ceil(Math.random() * 9));
+        const [value, setValue] = React.useState(Math.ceil(Math.random() * 9));
+        const [result, setResult] = React.useState(Math.ceil(Math.random() * 9));
+
+        const onChangeInput = (e) => {
+            setValue(e.target.value);
+        }
+
+        return (
+            <React.Fragment>
+                <div>{first} {second}는?</div>
+                <form onSubmit="">
+                    <input ref={} onChange={onChangeInput} value={value}/>
+                    <button>입력!</button>
+                </form>
+                <div id="result">{result}</div>
+            </React.Fragment>
+        );
+
+    }
+}
+```
 
 ### Real DOM vs Virtual DOM
 #### 예시
