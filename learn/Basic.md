@@ -37,3 +37,13 @@
 - 여러 html/js/css/이미지 파일들 한 번에 브라우저에 로딩하면 너무 느림 -> 웹팩으로 번들링.
 - 웹팩은 src/** 만 처리하기 때문에 이미지는 public/** 이 아닌 src 에 위치시킨다. 
 - 웹팩 안에 바벨 있음
+
+#### import/require
+```
+export const hello = 'hello'; -> import { hello}
+export default Numberbaseball; -> import Numberbaseball; 
+== modules.export
+```
+
+
+

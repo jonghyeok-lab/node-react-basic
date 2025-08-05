@@ -11,11 +11,12 @@ const getNumbers = () => {
     return array;
 }
 
+// 함수 컴포넌트는 리렌더링 될 때마다 실행된다.
 const NumberBaseball = () => {
 
     const [result, setResult] = useState('');
     const [value, setValue] = useState('');
-    const [answer, setAnswer] = useState(getNumbers);
+    const [answer, setAnswer] = useState(getNumbers); // lazy init
     const [tries, setTries] = useState([]);
 
     const onSubmitForm = (e) => {
@@ -27,7 +28,7 @@ const NumberBaseball = () => {
             })
             alert('게임을 다시 시작');
             setValue('');
-            setAnswer(getNumbers());
+            setAnswer(getNumbers()); // 다시 호출하기.
             setTries([])
         }
     }
